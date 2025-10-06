@@ -1,0 +1,86 @@
+ def findMedianSortedArrays(nums1, nums2):
+...     # Make sure nums1 is the smaller array.
+...     if len(nums1) > len(nums2):
+...         nums1, nums2 = nums2, nums1
+...
+>>>     m, n = len(nums1), len(nums2)
+  File "<stdin>", line 1
+    m, n = len(nums1), len(nums2)
+IndentationError: unexpected indent
+>>>     imin, imax, half_len = 0, m, (m + n + 1) // 2
+  File "<stdin>", line 1
+    imin, imax, half_len = 0, m, (m + n + 1) // 2
+IndentationError: unexpected indent
+>>>
+>>>     while imin <= imax:
+  File "<stdin>", line 1
+    while imin <= imax:
+IndentationError: unexpected indent
+>>>         i = (imin + imax) // 2
+  File "<stdin>", line 1
+    i = (imin + imax) // 2
+IndentationError: unexpected indent
+>>>         j = half_len - i
+  File "<stdin>", line 1
+    j = half_len - i
+IndentationError: unexpected indent
+>>>
+>>>         if i < m and nums2[j-1] > nums1[i]:
+  File "<stdin>", line 1
+    if i < m and nums2[j-1] > nums1[i]:
+IndentationError: unexpected indent
+>>>             # i is too small, must increase it
+>>>             imin = i + 1
+  File "<stdin>", line 1
+    imin = i + 1
+IndentationError: unexpected indent
+>>>         elif i > 0 and nums1[i-1] > nums2[j]:
+  File "<stdin>", line 1
+    elif i > 0 and nums1[i-1] > nums2[j]:
+IndentationError: unexpected indent
+>>>             # i is too big, must decrease it
+>>>             imax = i - 1
+  File "<stdin>", line 1
+    imax = i - 1
+IndentationError: unexpected indent
+>>>         else:
+  File "<stdin>", line 1
+    else:
+IndentationError: unexpected indent
+>>>             # i is perfect
+>>>             if i == 0: max_of_left = nums2[j-1]
+  File "<stdin>", line 1
+    if i == 0: max_of_left = nums2[j-1]
+IndentationError: unexpected indent
+>>>             elif j == 0: max_of_left = nums1[i-1]
+  File "<stdin>", line 1
+    elif j == 0: max_of_left = nums1[i-1]
+IndentationError: unexpected indent
+>>>             else: max_of_left = max(nums1[i-1], nums2[j-1])
+  File "<stdin>", line 1
+    else: max_of_left = max(nums1[i-1], nums2[j-1])
+IndentationError: unexpected indent
+>>>
+>>>             if (m + n) % 2 == 1:
+  File "<stdin>", line 1
+    if (m + n) % 2 == 1:
+IndentationError: unexpected indent
+>>>                 return max_of_left
+  File "<stdin>", line 1
+    return max_of_left
+IndentationError: unexpected indent
+>>>
+>>>             if i == m: min_of_right = nums2[j]
+  File "<stdin>", line 1
+    if i == m: min_of_right = nums2[j]
+IndentationError: unexpected indent
+>>>             elif j == n: min_of_right = nums1[i]
+  File "<stdin>", line 1
+    elif j == n: min_of_right = nums1[i]
+IndentationError: unexpected indent
+>>>             else: min_of_right = min(nums1[i], nums2[j])
+  File "<stdin>", line 1
+    else: min_of_right = min(nums1[i], nums2[j])
+IndentationError: unexpected indent
+>>>
+>>>             return (max_of_left + min_of_right) / 2.0
